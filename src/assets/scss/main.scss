@@ -6,8 +6,30 @@ body{
 	margin:0;
 	padding:0;
 }
+
+ .slides{
+  margin-top: 100px;
+  position: relative;
+  height: 600px !important; 
+  width: 100%;
+  background-color: white !important;
+}
+
+.slider{
+	height: 550px !important;
+	margin-bottom: 10%;
+	margin-top: 10%;
+}
 .button{
 	&--active{
 		@include buttonActive;
+	}
+}
+
+.icon{
+	&--module{
+		&__size{
+			width: 10%;
+		}
 	}
 }

@@ -7,7 +7,7 @@ const rootPath = {
 };
 
 const paths = {
-	html: "index.html",
+	html: "**/*.html",
 	sass: "assets/scss/**/*.scss",
 	mainSass:"assets/scss/main.scss",
 	js: "assets/js/app.js"
