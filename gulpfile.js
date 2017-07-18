@@ -7,21 +7,20 @@ const rootPath = {
 };
 
 const paths = {
-	html: "**/*.html",
+	html: "index.html",
 	sass: "assets/scss/**/*.scss",
 	mainSass:"assets/scss/main.scss",
 	js: "assets/js/app.js"
 };
 
 gulp.task("cargarINDEX",()=>{
+	console.log(rootPath.dist)
 	gulp.src(rootPath.source + paths.html)
-		.pipe(gulp.dest(rootPath.dist));
+		.pipe(gulp.dest('public'));
 });
 
 gulp.task('cargarJS', () =>{
 	gulp.src(rootPath.source + paths.js)
-		.pipe(uglify())
-		.pipe(obfuscate())
 		.pipe(gulp.dest(rootPath.dist + '/assets/js'));
 });
 

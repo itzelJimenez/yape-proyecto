@@ -16,6 +16,7 @@ const format = morganjson({
 
 
 app.use('/', express.static('public'));
+app.use('/static', express.static(__dirname+'/bower_components'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
