@@ -1,1 +1,1 @@
-alert("reg Code")
+console.log(localStorage.getItem('data'));

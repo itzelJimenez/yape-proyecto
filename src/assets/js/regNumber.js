@@ -5,19 +5,21 @@ const $phone = $('#phone');
 const $checkbox = $('#test1');
 
 const loadPage = () =>{
-	$form.submit(validate);
+	$form.submit(prevent);
 	$phone.keydown(validate);
-	$send.click(apiRequest);
 	$checkbox.click(validate);
+	$send.click(apiRequest);
 }
 
-
+const prevent = (e) =>{
+	e.preventDefaut();
+}
 const validate = ()=>{
 	let $phoneVal = $phone.val();
 	let $checked = $checkbox.is(':checked');
-	console.log($phoneVal.length);
+
 	if( $phoneVal.length == 10 && $checked  ){
-		console.log($checkbox);
+
 		$send.removeClass('disabled');
 	} else {
 		$send.addClass('disabled');
@@ -25,6 +27,8 @@ const validate = ()=>{
 }
 
 const apiRequest = () =>{
-
+	$.post(url, {"phone": $phone.val(), "terms": true}, (res)=>{
+		alert(res.message);
+	});;
 }
 $(document).ready(loadPage);
