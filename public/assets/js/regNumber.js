@@ -33,11 +33,12 @@ const apiRequest = () =>{
 			location.href = "regCode.html";
 			getCode(res)
 		} else {alert(res.message + ", por favor ingresa un número válido.")};
-	});;
+	});
 };
 
 const getCode = (res) =>{
 	localStorage.setItem("codigo", res.data.code); 
+	localStorage.setItem('numero', res.data.phone);
 };
 
 $(document).ready(loadPage);
