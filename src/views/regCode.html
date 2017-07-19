@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Registrar Número</title>
+		<title>Registrar Código</title>
 		<link rel="stylesheet" href="../static/materialize/dist/css/materialize.min.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
@@ -10,9 +10,9 @@
 		<section class="">	
 				<div class="row center-align">	
 					<div class="col s8 offset-s2">	
-						<img src="/img/icons/phone.png">
-						<h3 class="center-align">Para comenzar validemos tu número</h3>
-						<h5 class="center-align">Recibirás un sms con un código de validación</h5>
+						<img src="/img/icons/message.png">
+						<h3 class="center-align">Ahora ingresa tu código</h3>
+						<h5 class="center-align">Enviamos un SMS con el código de validación al número <span id="number"></span></h5>
 					</div>
 				</div>
 				<div class="row">
@@ -21,19 +21,14 @@
 							<div class="row">
 								<div class="input-field">
 									<input placeholder="(+51)" id="first_name" type="Number" class="validate" maxlength="9">
+									<h5 class="center-align">Reintentar en 21 seg.</h5>
 								</div>
-						    </div>
-						    <div class="row">
-						    	<input type="checkbox" id="test1" />
-      							<label for="test1">Acepto los <a href="#">Términos y condiciones</a></label>
 						    </div>
 						</div>
 					</form>	
 				</div>
 		</section>
-		<div class="row center-align">
-			<a class="button--active__little" href="regCode.html">Continuar</a>
-		</div>
+		
 		<script src="../static/jquery/dist/jquery.min.js"></script>
 		<script src="../static/materialize/dist/js/materialize.min.js"></script>
 		<script src="/assets/js/app.js" type="text/javascript" charset="utf-8"></script>	

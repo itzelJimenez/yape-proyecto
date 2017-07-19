@@ -1,8 +1,9 @@
-@mixin buttonActive(){
+@mixin buttonActive($p-width){
 	background-color: #fbd43b;
     color: white;
-    padding: 2% 25%;
+    padding: 2% $p-width;
     margin: 2%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-radius: 10px;
+    text-transform: uppercase;
 }
