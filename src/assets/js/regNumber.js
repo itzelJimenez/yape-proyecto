@@ -13,7 +13,8 @@ const loadPage = () =>{
 
 const prevent = (e) =>{
 	e.preventDefaut();
-}
+};
+
 const validate = ()=>{
 	let $phoneVal = $phone.val();
 	let $checked = $checkbox.is(':checked');
@@ -24,13 +25,19 @@ const validate = ()=>{
 	} else {
 		$send.addClass('disabled');
 	}
-}
+};
 
 const apiRequest = () =>{
 	$.post(url, {"phone": $phone.val(), "terms": true}, (res)=>{
 		if(res.message == "Usuario válido"){
 			location.href = "regCode.html";
-		} else (alert(res.message + ", por favor ingresa un número válido."));
+			getCode(res)
+		} else {alert(res.message + ", por favor ingresa un número válido.")};
 	});;
-}
+};
+
+const getCode = (res) =>{
+	localStorage.setItem("codigo", res.data.code); 
+};
+
 $(document).ready(loadPage);
