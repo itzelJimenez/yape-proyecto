@@ -28,7 +28,9 @@ const validate = ()=>{
 
 const apiRequest = () =>{
 	$.post(url, {"phone": $phone.val(), "terms": true}, (res)=>{
-		alert(res.message);
+		if(res.message == "Usuario válido"){
+			location.href = "regCode.html";
+		} else (alert(res.message + "por favor ingresa un número válido"));
 	});;
 }
 $(document).ready(loadPage);
