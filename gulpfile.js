@@ -10,7 +10,7 @@ const paths = {
 	html: "**/*.html",
 	sass: "assets/scss/**/*.scss",
 	mainSass:"assets/scss/main.scss",
-	js: "assets/js/app.js"
+	js: "assets/**/*.js"
 };
 
 gulp.task("cargarINDEX",()=>{
