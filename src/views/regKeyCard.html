@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Registrar Código</title>
+		<title>Registrar Número</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="../static/materialize/dist/css/materialize.min.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,20 +11,25 @@
 		<section class="">	
 				<div class="row center-align">	
 					<div class="col s8 offset-s2">	
-						<img src="/img/icons/message.png">
-						<h3 class="center-align">Ahora ingresa tu código</h3>
-						<h5 class="center-align">Enviamos un SMS con el código de validación al número <span id="number"></span></h5>
+						<img src="/img/icons/bcp-logo.png">
+						<h3 class="center-align">Ingresa la clave de tu tarjeta</h3>
+						<h5 class="center-align">Tarjeta ***<span id="last-digits"></span></h5>
 					</div>
 				</div>
 				<div class="row">
-					<form id="submit-code" action="http://localhost:3000/views/regUser.html">
+					<form id="form">
 						<div class="col s8 offset-s2">	
 							<div class="row">
-								<div class="input-field">
-									<input placeholder="(+51)" id="code" type="number" class="validate" maxlength="9">
-									<h5 class="center-align">Reintentar en 21 seg.</h5>
+								<div class="input-field center-align">
+									<input placeholder="    -    -    -" id="number" type="Number" class="validate center-align" max="16">
 								</div>
 						    </div>
+						    <div class="row center-align">
+						    	<a href="#">Escanear tarjeta</a>
+						    </div>
+						</div><br>
+						<div class="row center-align">
+							<button type="submit" class="btn">Registrar</button>
 						</div>
 					</form>	
 				</div>
@@ -32,6 +37,6 @@
 		
 		<script src="../static/jquery/dist/jquery.min.js"></script>
 		<script src="../static/materialize/dist/js/materialize.min.js"></script>
-		<script src="../assets/js/regCode.js" type="text/javascript" charset="utf-8"></script>	
+		<script src="../assets/js/regKeyCard.js" type="text/javascript" charset="utf-8"></script>	
 	</body>
 </html>

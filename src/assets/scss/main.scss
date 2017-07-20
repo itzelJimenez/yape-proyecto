@@ -1,15 +1,17 @@
 @import 'variables';
 @import 'mixins';
-
+@import 'functions';
 
 body{
 	margin:0;
 	padding:0;
 }
 section{
-	margin-top: 15%;
+	padding-top: 15%;
 }
- .slides{
+
+
+.slides{
   margin-top: 100px;
   margin-bottom: 15% !important;
   position: relative;
@@ -54,6 +56,35 @@ input[type=email]:not(.browser-default) {
 	margin: 3% 0 20px 0;
 }
 
+.date {
+	input[type=number]:not(.browser-default){
+		margin: 0;
+	}
+}
+
 [type="checkbox"]+label{
 	font-size: 1.5rem;
+}
+
+.dark-purple{
+	background-color: $morado-dark;
+}
+.light-purple{
+	background-color: $morado-light;
+}
+
+div.row.light-purple{
+	margin:0;
+}
+
+.under{
+	position: fixed;
+	text-align: center;
+	bottom: 10%;
+	width:100%;
+}
+
+.flex{
+	display: flex;
+	vertical-align: center;
 }

@@ -8,6 +8,10 @@ const loadPage = () =>{
 	$form.submit(prevent);
 	$phone.keydown(validate);
 	$checkbox.click(validate);
+	$send.submit((e)=>{
+		e.preventDefaut();
+		apiRequest;
+	});
 	$send.click(apiRequest);
 }
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Registrar Número</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../static/materialize/dist/css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+	</head>
+	<body>
+		<section class="">	
+				<div class="row center-align">	
+					<div class="col s8 offset-s2">	
+						<img src="/img/icons/bcp-logo.png">
+						<h3 class="center-align">Registra tu tarjeta de débito BCP</h3>
+						<h5 class="center-align">Por ahora solo aceptamos cuentas de ahorro y/o corriente en soles.</h5>
+					</div>
+				</div>
+				<div class="row">
+					<form id="form">
+						<div class="col s8 offset-s2">	
+							<div class="row">
+								<div class="input-field center-align">
+									<input placeholder="    -    -    -" id="number" type="Number" class="validate center-align" max="16">
+								</div>
+						    </div>
+						    <div class="row center-align">
+						    	<a href="#">Escanear tarjeta</a>
+						    </div>
+						    <div class="row">
+						    	<span class="col s7"><h5>Fecha de Vencimiento</h5></span>
+						    	<input class="col s2 date" type="number" id="test1" max="2" placeholder="Mes" /> 
+						    	<span class="col s1 center-align"><h5>/</h5></span> 
+						    	<input class="col s2 date" type="number" name="" max="2" placeholder="Año" />
+						    </div>
+						</div><br>
+						<div class="row center-align">
+							<button type="submit" class="btn">Continuar</button>
+						</div>
+					</form>	
+				</div>
+		</section>
+		
+		<script src="../static/jquery/dist/jquery.min.js"></script>
+		<script src="../static/materialize/dist/js/materialize.min.js"></script>
+		<script src="../assets/js/regCard.js" type="text/javascript" charset="utf-8"></script>	
+	</body>
+</html>

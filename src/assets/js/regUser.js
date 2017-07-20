@@ -70,4 +70,5 @@ const userRegister = function(){
 		} else {alert(res.message + ", por favor ingresa un número válido.")};
 	});
 };
+
 $(document).ready(loadPage);
