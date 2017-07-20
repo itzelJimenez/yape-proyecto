@@ -1,8 +1,10 @@
 const url = 'http://localhost:3000/api/resendCode';
 const originalCode = localStorage.getItem('codigo');
 const $sendCode = $('submit-code');
+const num = localStorage.getItem('numero');
 
 const loadPage = ()=>{
+	$('#number').text(num);
 	alert("Tu código de verificación es: " + originalCode);
 	sendNewCode();
 	$sendCode.submit((e)=>{
@@ -12,7 +14,6 @@ const loadPage = ()=>{
 }
 
 const newCode = ()=>{
-	const num = localStorage.getItem('numero');
 	$.post(url, {'phone': num}, (req)=>{
 	console.log(req);
 		const succes = req.success;
