@@ -52,11 +52,22 @@ const validateName = ()=>{
 const validateFields = (e)=>{
 	e.preventDefault();
 	if(validateName() && validateEmail() && validatePassword()){
-		location.href = "succes.html";
+		userRegister();
 	} 
 }
  
-const userRegister = ()=>{
-
+const userRegister = function(){
+	console.log("si esta entrando");
+	$.post(url, {
+		"phone": phone, 
+		"email": $email.val(),
+		"password": $password.val(),
+		"name": $name.val()
+		}, (res)=>{
+		console.log(res.message);
+		if(res.message == "Usuario creado con éxito"){
+			location.href = "succes.html";
+		} else {alert(res.message + ", por favor ingresa un número válido.")};
+	});
 };
 $(document).ready(loadPage);
