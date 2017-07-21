@@ -6,23 +6,21 @@ body{
 	margin:0;
 	padding:0;
 }
+
 section{
-	padding-top: 15%;
+	margin-top: 15%;
 }
-
-
 .slides{
-  margin-top: 100px;
-  margin-bottom: 15% !important;
+  margin-top: 50px;
+  margin-bottom: 2% !important;
   position: relative;
-  height: 600px !important; 
+  height: 500px !important;
   width: 100%;
   background-color: white !important;
 }
 
 .slider{
-	height: 650px !important;
-	margin-bottom: 10% ;
+	margin-bottom: 50px !important ;
 }
 .button{
 	&--active{

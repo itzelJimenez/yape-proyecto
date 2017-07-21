@@ -43,24 +43,23 @@ const emptyFields = ()=>{
 	}
 }
 
-const validateCard = ()=>{
-
-}
-
 const validateMonth = ()=>{
-
+	if($month.val().length >0 || $month.val().length < 13){
+		return true;
+	}
 }
 
 const validateYear = ()=>{
-
+	if($year.val().length >= 2017 || $year.val().length < 2024){
+		return true;
+	}
 }
 
-const validateFields = (e)=>{
-	e.preventDefault();
-	if(validateCard() && validateMonth() && validateYear()){
+const validateFields = ()=>{
+	if(disabledInput && validateMonth() && validateYear()){
 		saveData();
 		location.href = 'regKeyCard.html';
-	} 
+	} else {alert("Favor de ingresar datos válidos")};
 }
 
 const saveData = function(){
