@@ -9,9 +9,16 @@ const loadPage = ()=>{
 		validate();
 	});
 	$send.click(validate);
+	$lastDigits.keyup(enabled);
 }
 
-
+const enabled = () =>{
+	if($lastDigits.val().length == 4){
+		$send.removeClass('disabled');
+	} else if ($lastDigits.val().length  < 4){
+		$send.addClass('disabled');
+	}
+}
 
 const validate = ()=>{
 	if($lastDigits.val().length == 4){
