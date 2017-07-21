@@ -14,7 +14,7 @@
 						<img src="/img/icons/bcp-logo.png">
 						<h3 class="center-align">Registra tu tarjeta de débito BCP</h3>
 						<h5 class="center-align">Por ahora solo aceptamos cuentas de ahorro y/o corriente en soles.</h5>
-						<h5 class="center-align" id="reactivate"><a href="#"> <i class="material-icons">cached</i> Volver a ingresar número de tarjeta </a></h5>
+						<h5 class="center-align hide" id="reactivate"><a href="#"> <i class="material-icons">cached</i> Volver a ingresar número de tarjeta </a></h5>
 					</div>
 				</div>
 				<div class="row">
@@ -30,13 +30,13 @@
 						    </div>
 						    <div class="row">
 						    	<span class="col s7"><h5>Fecha de Vencimiento</h5></span>
-						    	<input class="col s2 date" type="number" id="test1" max="2" placeholder="Mes"/> 
+						    	<input class="col s2 date" type="number" max="2" placeholder="Mes" id="month" /> 
 						    	<span class="col s1 center-align"><h5>/</h5></span> 
-						    	<input class="col s2 date" type="number" name="" max="2" placeholder="Año" />
+						    	<input class="col s2 date" type="number" name="" max="2" placeholder="Año" id="year" />
 						    </div>
-						</div><br>
-						<div class="row center-align">
-							<button type="submit" class="btn">Continuar</button>
+						    <div class="row center-align">
+								<button type="submit" class="btn" id="send">Continuar</button>
+							</div>
 						</div>
 					</form>	
 				</div>
