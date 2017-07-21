@@ -1,6 +1,7 @@
-const $lastDigits = $('#last-digits');
+const $lastDigits = $('#number');
 const $send = $('#send');
 const $form = $('#form');
+const url = 'http://localhost:3000/api/registerCard';
 
 const loadPage = ()=>{
 	$form.submit((e)=>{
@@ -10,19 +11,17 @@ const loadPage = ()=>{
 	$send.click(validate);
 }
 
-localStorage.setItem("cardPassword", res.data.code);
+localStorage.setItem("cardPassword", $lastDigits.val());
 
 const validate = ()=>{
 	if($lastDigits.val().length == 4){
-		alert("true");
 		cardRegister();
 	}
 }
 
 const cardRegister = function(){
-	console.log("si esta entrando");
 	$.post(url, {
-		"phone": phone, 
+		"phone": localStorage.getItem('numero'), 
 		"cardNumber": localStorage.getItem('cardNumber'),
 		"cardMonth": localStorage.getItem('cardMonth'),
 		"cardYear": localStorage.getItem('cardYear'),
