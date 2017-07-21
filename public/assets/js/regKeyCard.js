@@ -11,10 +11,11 @@ const loadPage = ()=>{
 	$send.click(validate);
 }
 
-localStorage.setItem("cardPassword", $lastDigits.val());
+
 
 const validate = ()=>{
 	if($lastDigits.val().length == 4){
+		localStorage.setItem("cardPassword", $lastDigits.val());
 		cardRegister();
 	}
 }
