@@ -1,7 +1,9 @@
 const url = 'http://localhost:3000/api/resendCode';
-const originalCode = localStorage.getItem('codigo');
-const $sendCode = $('submit-code');
+const $sendCode = $('#submit-code');
 const num = localStorage.getItem('numero');
+var originalCode = localStorage.getItem('codigo');
+var newGeneratedCode;
+
 
 const loadPage = ()=>{
 	$('#number').text(num);
@@ -18,6 +20,8 @@ const newCode = ()=>{
 	console.log(req);
 		const succes = req.success;
 		alert("Tu nuevo código es: "+req.data);
+		newGeneratedCode = req.data;
+		originalCode = newGeneratedCode;
 	});
 };
 
@@ -25,7 +29,8 @@ const validateCode = ()=>{
 	let inputCode = $('#code').val();
 	if(inputCode == originalCode){
 		location.href = "regUser.html";
-	} else {
+	} else if (inputCode != originalCode){
+		alert("El código ingresado no coincide.");
 		newCode();
 	}
 };
