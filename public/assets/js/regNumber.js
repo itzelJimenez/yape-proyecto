@@ -5,13 +5,12 @@ const $phone = $('#phone');
 const $checkbox = $('#test1');
 
 const loadPage = () =>{
-	$form.submit(prevent);
+	$form.submit((e)=>{
+		e.preventDefaut();
+		apiRequest();
+	});
 	$phone.keydown(validate);
 	$checkbox.click(validate);
-	$send.submit((e)=>{
-		e.preventDefaut();
-		apiRequest;
-	});
 	$send.click(apiRequest);
 }
 
@@ -24,20 +23,23 @@ const validate = ()=>{
 	let $checked = $checkbox.is(':checked');
 
 	if( $phoneVal.length == 10 && $checked  ){
-
 		$send.removeClass('disabled');
+				return true;
+
 	} else {
 		$send.addClass('disabled');
 	}
 };
 
 const apiRequest = () =>{
-	$.post(url, {"phone": $phone.val(), "terms": true}, (res)=>{
-		if(res.message == "Usuario válido"){
-			location.href = "regCode.html";
-			getCode(res)
-		} else {alert(res.message + ", por favor ingresa un número válido.")};
-	});
+	if (validate()) {
+		$.post(url, {"phone": $phone.val(), "terms": true}, (res)=>{
+			if(res.message == "Usuario válido"){
+				location.href = "regCode.html";
+				getCode(res)
+			} else {alert(res.message + ", por favor ingresa un número válido.")};
+		});
+	} else {alert("Recuerda que debes llenar los campos adecuadamente.");}
 };
 
 const getCode = (res) =>{
