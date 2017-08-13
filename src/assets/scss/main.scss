@@ -86,3 +86,9 @@ div.row.light-purple{
 	display: flex;
 	vertical-align: center;
 }
+.center-absolute{
+	position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
